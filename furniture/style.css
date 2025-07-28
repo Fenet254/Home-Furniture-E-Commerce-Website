@@ -1,89 +1,66 @@
-/* Category card hover effects */
-.category-card:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Product card hover effects */
-.product-card:hover {
-    transform: scale(1.02);
-    transition: all 0.3s ease;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+header, nav, footer {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  text-align: center;
 }
 
-
-.category-card, .product-card {
-    transition: all 0.3s ease;
+nav button {
+  margin: 0 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
-/* Button hover effects */
-button {
-    transition: all 0.3s ease;
+.product-section {
+  padding: 2rem;
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Image fallback styling */
-.product-card img {
-    transition: opacity 0.3s ease;
+.hidden {
+  display: none;
+  opacity: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .category-card:hover,
-    .product-card:hover {
-        transform: none;
-    }
-    
-    .text-5xl {
-        font-size: 2.5rem;
-    }
-    
-    .text-4xl {
-        font-size: 2rem;
-    }
+.product {
+  margin-top: 1rem;
 }
 
-/* Loading animation for images */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.add-cart-btn {
+  margin-top: 0.5rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
 }
 
-.product-card img {
-    animation: fadeIn 0.5s ease-in-out;
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8;
+}
+.bg-green-600 {
+  background-color: #16a34a;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+.relative {
+  position: relative;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.absolute {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: white;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* Focus states for accessibility */
-button:focus,
-.category-card:focus {
-    outline: 2px solid #3b82f6;
-    outline-offset: 2px;
-}
-
-/* Cart notification animation */
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.cart-added {
-    animation: pulse 0.3s ease-in-out;
+.bg-red-500 {
+  background-color: #ef4444;
 }
