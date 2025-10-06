@@ -3,60 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FurniHome</title>
+  <title>FurniHome - Modern Furniture Store</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header>
-    <h1 id="categoryTitle">Featured Products</h1>
-    <nav>
-      <button onclick="showAllProducts()">All</button>
-      <button onclick="showCategory('kitchen')">Kitchen</button>
-      <button onclick="showCategory('living')">Living</button>
-      <button onclick="showCategory('bedroom')">Bedroom</button>
-      <button onclick="showCategory('bathroom')">Bathroom</button>
+  <header class="header">
+    <div class="logo">🛋️ <span>FurniHome</span></div>
+
+    <nav class="nav">
+      <button class="nav-btn active" onclick="showAllProducts(this)">All</button>
+      <button class="nav-btn" onclick="showCategory('kitchen', this)">Kitchen</button>
+      <button class="nav-btn" onclick="showCategory('living', this)">Living</button>
+      <button class="nav-btn" onclick="showCategory('bedroom', this)">Bedroom</button>
+      <button class="nav-btn" onclick="showCategory('bathroom', this)">Bathroom</button>
     </nav>
-    <div class="relative">
-      <button>
+
+    <div class="cart">
+      <button id="cartButton" class="cart-btn">
         🛒
-        <span class="absolute bg-red-500">3</span>
+        <span id="cartCount" class="cart-count">0</span>
       </button>
     </div>
   </header>
 
   <main>
-    <section id="featured-products" class="product-section">
-      <h2>Featured</h2>
-      <div class="product">
-        <img src="image1.jpg" alt="Item" onerror="this.style.display='none'" />
-        <div class="hidden">Image not available</div>
-        <button class="add-cart-btn bg-blue-600 hover:bg-blue-700">Add to Cart</button>
-      </div>
-    </section>
-
-    <section id="kitchen-products" class="product-section hidden">
-      <h2>Kitchen</h2>
-      <!-- Add kitchen items here -->
-    </section>
-
-    <section id="living-products" class="product-section hidden">
-      <h2>Living Room</h2>
-      <!-- Add living room items here -->
-    </section>
-
-    <section id="bedroom-products" class="product-section hidden">
-      <h2>Bedroom</h2>
-      <!-- Add bedroom items here -->
-    </section>
-
-    <section id="bathroom-products" class="product-section hidden">
-      <h2>Bathroom</h2>
-      <!-- Add bathroom items here -->
+    <section id="product-grid" class="grid-container">
+      <!-- Products dynamically inserted by JS -->
     </section>
   </main>
 
-  <footer>
-    <input type="search" placeholder="Search products..." />
+  <footer class="footer">
+    <input id="searchInput" type="search" placeholder="Search products..." />
     <button onclick="handleSearch()">Search</button>
   </footer>
 
