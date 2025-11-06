@@ -8,6 +8,7 @@ export const getProducts = async (req, res) => {
   let products = await fs.readJSON(dataPath);
 
   if (category && category !== "all") {
+
     products = products.filter(p => p.category === category);
   }
   if (search) {
