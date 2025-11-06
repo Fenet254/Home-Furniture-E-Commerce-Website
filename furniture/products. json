@@ -1,7 +1,8 @@
 [
   { "id": 1, "name": "Modern Sofa", "category": "living", "price": 499, "img":
  "https://images.unsplash.com/photo-1616627452984-3f4f3d0b9e94" },
-  { "id": 2, "name": "Wooden Table", "category": "kitchen", "price": 199, "img": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461" },
+  { "id": 2, "name": "Wooden Table", "category": "kitchen", "price": 199, "img":
+ "https://images.unsplash.com/photo-1578683010236-d716f9a3f461" },
   { "id": 3, "name": "Bed Frame", "category": "bedroom", "price": 899, "img": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa" },
   { "id": 4, "name": "Bathroom Mirror", "category": "bathroom", "price": 120, "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c" },
   { "id": 5, "name": "Dining Chair", "category": "kitchen", "price": 89, "img": "https://images.unsplash.com/photo-1616627988854-2c8f7d3e9b7d" }
