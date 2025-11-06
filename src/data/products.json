@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Modern Sofa",
+    "category": "living",
+    "img": "https://images.unsplash.com/photo-1616627452984-3f4f3d0b9e94",
+    "price": 499,
+    "description": "Comfortable modern sofa with plush cushions and sleek design."
+  },
+  {
+    "id": 2,
+    "name": "Wooden Dining Table",
+    "category": "kitchen",
+    "img": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+    "price": 299,
+    "description": "Elegant wooden dining table perfect for family meals."
+  },
+  {
+    "id": 3,
+    "name": "King Size Bed Frame",
+    "category": "bedroom",
+    "img": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa",
+    "price": 899,
+    "description": "Sturdy king size bed frame with storage drawers."
+  },
+  {
+    "id": 4,
+    "name": "Bathroom Vanity Mirror",
+    "category": "bathroom",
+    "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "price": 120,
+    "description": "Illuminated vanity mirror with adjustable brightness."
+  },
+  {
+    "id": 5,
+    "name": "Ergonomic Office Chair",
+    "category": "office",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    "price": 250,
+    "description": "Adjustable office chair for maximum comfort during work."
+  },
+  {
+    "id": 6,
+    "name": "Outdoor Patio Set",
+    "category": "outdoor",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    "price": 750,
+    "description": "Weather-resistant patio set for outdoor relaxation."
+  },
+  {
+    "id": 7,
+    "name": "Bookshelf",
+    "category": "living",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    "price": 150,
+    "description": "Modern bookshelf with ample storage space."
+  },
+  {
+    "id": 8,
+    "name": "Coffee Table",
+    "category": "living",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    "price": 200,
+    "description": "Stylish coffee table with glass top."
+  },
+  {
+    "id": 9,
+    "name": "Wardrobe",
+    "category": "bedroom",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    "price": 400,
+    "description": "Spacious wardrobe with sliding doors."
+  },
+  {
+    "id": 10,
+    "name": "Kitchen Island",
+    "category": "kitchen",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+    "price": 600,
+    "description": "Functional kitchen island with storage."
+  }
+]
