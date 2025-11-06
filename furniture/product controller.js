@@ -13,6 +13,7 @@ export const getProducts = async (req, res) => {
   if (search) {
     const q = search.toLowerCase();
     products = products.filter(p => p.name.toLowerCase().includes(q));
+
   }
 
   res.json(products);
