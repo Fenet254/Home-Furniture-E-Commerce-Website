@@ -1,6 +1,7 @@
 import fs from "fs-extra";
 const dataPath = "./data/products.json";
 
+
 export const getProducts = async (req, res) => {
 
 
