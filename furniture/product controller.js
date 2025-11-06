@@ -22,6 +22,7 @@ export const getProducts = async (req, res) => {
 
 
 
+
   res.json(products);
 };
 
