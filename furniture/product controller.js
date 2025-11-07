@@ -1,17 +1,27 @@
 import fs from "fs-extra";
 const dataPath = "./data/products.json";
 
+
 export const getProducts = async (req, res) => {
+
+
   const { category, search } = req.query;
   let products = await fs.readJSON(dataPath);
 
   if (category && category !== "all") {
+
     products = products.filter(p => p.category === category);
   }
   if (search) {
     const q = search.toLowerCase();
-    products = products.filter(p => p.name.toLowerCase().includes(q));
+    products = products.filter(p =>
+ p.name.toLowerCase().includes(q));
+
+
   }
+
+
+
 
   res.json(products);
 };
