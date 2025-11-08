@@ -1,0 +1,25 @@
+{
+  "name": "home-furniture-e-commerce-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fenet254/Home-Furniture-E-Commerce-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fenet254/Home-Furniture-E-Commerce-Website/issues"
+  },
+  "homepage": "https://github.com/Fenet254/Home-Furniture-E-Commerce-Website#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.2"
+  }
+}

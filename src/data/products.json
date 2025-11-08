@@ -5,7 +5,7 @@
     "category": "living",
     "color": "Gray",
     "material": "Fabric",
-    "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+    "img": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop",
     "price": 499,
     "description": "Comfortable modern sofa with plush cushions and sleek design."
   },
@@ -35,7 +35,7 @@
     "category": "bathroom",
     "color": "Silver",
     "material": "Metal",
-    "img": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop",
+    "img": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=300&fit=crop",
     "price": 120,
     "description": "Illuminated vanity mirror with adjustable brightness."
   },
