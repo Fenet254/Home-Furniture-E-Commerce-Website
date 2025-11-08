@@ -1,5 +1,12 @@
 let products = [];
 let cart = [];
+let currentFilters = {
+  category: "all",
+  minPrice: 0,
+  maxPrice: 1000,
+  colors: [],
+  materials: []
+};
 
 // Load products from JSON file
 async function loadProducts() {
@@ -7,18 +14,45 @@ async function loadProducts() {
     const response = await fetch('../src/data/products.json');
     products = await response.json();
     displayProducts();
+    updateResultsCount();
   } catch (error) {
     console.error('Error loading products:', error);
   }
 }
 
-function displayProducts(filter = "all") {
+function displayProducts() {
   const grid = document.getElementById("product-grid");
   grid.innerHTML = "";
 
-  const filtered = filter === "all"
-    ? products
-    : products.filter(p => p.category === filter);
+  let filtered = products;
+
+  // Apply category filter
+  if (currentFilters.category !== "all") {
+    filtered = filtered.filter(p => p.category === currentFilters.category);
+  }
+
+  // Apply price filter
+  filtered = filtered.filter(p => p.price >= currentFilters.minPrice && p.price <= currentFilters.maxPrice);
+
+  // Apply color filter
+  if (currentFilters.colors.length > 0) {
+    filtered = filtered.filter(p => currentFilters.colors.includes(p.color));
+  }
+
+  // Apply material filter
+  if (currentFilters.materials.length > 0) {
+    filtered = filtered.filter(p => currentFilters.materials.includes(p.material));
+  }
+
+  // Apply sorting
+  const sortValue = document.getElementById("sortSelect").value;
+  if (sortValue === "price-low") {
+    filtered.sort((a, b) => a.price - b.price);
+  } else if (sortValue === "price-high") {
+    filtered.sort((a, b) => b.price - a.price);
+  } else {
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
+  }
 
   filtered.forEach(prod => {
     const card = document.createElement("div");
@@ -29,11 +63,16 @@ function displayProducts(filter = "all") {
         <h3>${prod.name}</h3>
         <p class="price">$${prod.price}</p>
         <p class="description">${prod.description}</p>
+        <div class="product-details">
+          <small>Color: ${prod.color} | Material: ${prod.material}</small>
+        </div>
       </div>
       <button class="add-cart-btn" onclick="addToCart(${prod.id})">Add to Cart</button>
     `;
     grid.appendChild(card);
   });
+
+  updateResultsCount(filtered.length);
 }
 
 function addToCart(productId) {
@@ -62,18 +101,92 @@ function showNotification(message) {
 
 function showAllProducts(btn) {
   activateNav(btn);
-  displayProducts("all");
+  currentFilters.category = "all";
+  displayProducts();
 }
 
 function showCategory(cat, btn) {
   activateNav(btn);
-  displayProducts(cat);
+  currentFilters.category = cat;
+  displayProducts();
 }
 
 function activateNav(btn) {
   document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
 }
+
+function updateResultsCount(count) {
+  const totalProducts = products.length;
+  const resultsText = count === totalProducts ? `All Products (${count})` : `Filtered Results (${count} of ${totalProducts})`;
+  document.getElementById("resultsCount").textContent = resultsText;
+}
+
+// Filter Functions
+function applyFilters() {
+  // Get price range
+  const minPrice = parseInt(document.getElementById("minPrice").value);
+  const maxPrice = parseInt(document.getElementById("maxPrice").value);
+  currentFilters.minPrice = minPrice;
+  currentFilters.maxPrice = maxPrice;
+
+  // Update price display
+  document.getElementById("minPriceDisplay").textContent = `$${minPrice}`;
+  document.getElementById("maxPriceDisplay").textContent = `$${maxPrice}`;
+
+  // Get selected colors
+  const colorCheckboxes = document.querySelectorAll('.color-filters input[type="checkbox"]:checked');
+  currentFilters.colors = Array.from(colorCheckboxes).map(cb => cb.value);
+
+  // Get selected materials
+  const materialCheckboxes = document.querySelectorAll('.material-filters input[type="checkbox"]:checked');
+  currentFilters.materials = Array.from(materialCheckboxes).map(cb => cb.value);
+
+  displayProducts();
+}
+
+function clearFilters() {
+  // Reset price range
+  document.getElementById("minPrice").value = 0;
+  document.getElementById("maxPrice").value = 1000;
+  document.getElementById("minPriceDisplay").textContent = "$0";
+  document.getElementById("maxPriceDisplay").textContent = "$1000";
+
+  // Uncheck all checkboxes
+  document.querySelectorAll('.color-filters input[type="checkbox"], .material-filters input[type="checkbox"]').forEach(cb => {
+    cb.checked = false;
+  });
+
+  // Reset filters
+  currentFilters = {
+    category: currentFilters.category, // Keep category filter
+    minPrice: 0,
+    maxPrice: 1000,
+    colors: [],
+    materials: []
+  };
+
+  displayProducts();
+}
+
+// Event listeners for filters
+document.addEventListener('DOMContentLoaded', function() {
+  // Price range sliders
+  document.getElementById("minPrice").addEventListener("input", function() {
+    document.getElementById("minPriceDisplay").textContent = `$${this.value}`;
+  });
+
+  document.getElementById("maxPrice").addEventListener("input", function() {
+    document.getElementById("maxPriceDisplay").textContent = `$${this.value}`;
+  });
+
+  // Filter buttons
+  document.getElementById("applyFilters").addEventListener("click", applyFilters);
+  document.getElementById("clearFilters").addEventListener("click", clearFilters);
+
+  // Sort select
+  document.getElementById("sortSelect").addEventListener("change", displayProducts);
+});
 
 function handleSearch() {
   const query = document.getElementById("searchInput").value.toLowerCase();

@@ -65,7 +65,7 @@
     "category": "living",
     "color": "White",
     "material": "Wood",
-    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "img": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=300&fit=crop",
     "price": 150,
     "description": "Modern bookshelf with ample storage space."
   },
@@ -85,7 +85,7 @@
     "category": "bedroom",
     "color": "Oak",
     "material": "Wood",
-    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
     "price": 400,
     "description": "Spacious wardrobe with sliding doors."
   },
@@ -115,3 +115,188 @@
     "category": "bedroom",
     "color": "Gray",
     "material": "Upholstered",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 650,
+    "description": "Elegant queen bed frame with headboard."
+  },
+  {
+    "id": 13,
+    "name": "Bar Stools Set",
+    "category": "kitchen",
+    "color": "Black",
+    "material": "Metal",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 180,
+    "description": "Modern bar stools for kitchen counter."
+  },
+  {
+    "id": 14,
+    "name": "Floor Lamp",
+    "category": "living",
+    "color": "Silver",
+    "material": "Metal",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 120,
+    "description": "Contemporary floor lamp with adjustable height."
+  },
+  {
+    "id": 15,
+    "name": "Bathroom Cabinet",
+    "category": "bathroom",
+    "color": "White",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 220,
+    "description": "Spacious bathroom cabinet with mirror."
+  },
+  {
+    "id": 16,
+    "name": "Desk Lamp",
+    "category": "office",
+    "color": "Black",
+    "material": "Metal",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 45,
+    "description": "LED desk lamp with adjustable brightness."
+  },
+  {
+    "id": 17,
+    "name": "Garden Bench",
+    "category": "outdoor",
+    "color": "Teak",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 320,
+    "description": "Weather-resistant garden bench for outdoor seating."
+  },
+  {
+    "id": 18,
+    "name": "TV Stand",
+    "category": "living",
+    "color": "Walnut",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 280,
+    "description": "Modern TV stand with storage compartments."
+  },
+  {
+    "id": 19,
+    "name": "Nightstand",
+    "category": "bedroom",
+    "color": "White",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 95,
+    "description": "Compact nightstand with drawer storage."
+  },
+  {
+    "id": 20,
+    "name": "Shower Curtain",
+    "category": "bathroom",
+    "color": "Blue",
+    "material": "Fabric",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 35,
+    "description": "Water-resistant shower curtain with elegant design."
+  },
+  {
+    "id": 21,
+    "name": "Bedroom Dresser",
+    "category": "bedroom",
+    "color": "Cherry",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+    "price": 450,
+    "description": "Elegant dresser with multiple drawers for bedroom storage."
+  },
+  {
+    "id": 22,
+    "name": "Bedroom Mirror",
+    "category": "bedroom",
+    "color": "Gold",
+    "material": "Metal",
+    "img": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop",
+    "price": 180,
+    "description": "Ornate bedroom mirror with gold frame."
+  },
+  {
+    "id": 23,
+    "name": "Bedroom Rug",
+    "category": "bedroom",
+    "color": "Beige",
+    "material": "Wool",
+    "img": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "price": 120,
+    "description": "Soft wool rug perfect for bedroom flooring."
+  },
+  {
+    "id": 24,
+    "name": "Bedroom Chair",
+    "category": "bedroom",
+    "color": "Cream",
+    "material": "Fabric",
+    "img": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    "price": 220,
+    "description": "Comfortable armchair for bedroom reading nook."
+  },
+  {
+    "id": 25,
+    "name": "Bedroom Lamp",
+    "category": "bedroom",
+    "color": "White",
+    "material": "Ceramic",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 80,
+    "description": "Elegant bedside lamp with ceramic base."
+  },
+  {
+    "id": 26,
+    "name": "Living Room Rug",
+    "category": "living",
+    "color": "Gray",
+    "material": "Synthetic",
+    "img": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=300&fit=crop",
+    "price": 150,
+    "description": "Modern living room rug with geometric pattern."
+  },
+  {
+    "id": 27,
+    "name": "Kitchen Cabinet",
+    "category": "kitchen",
+    "color": "Oak",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+    "price": 500,
+    "description": "Spacious kitchen cabinet with oak finish."
+  },
+  {
+    "id": 28,
+    "name": "Office Desk",
+    "category": "office",
+    "color": "Black",
+    "material": "Wood",
+    "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+    "price": 300,
+    "description": "Ergonomic office desk with storage drawers."
+  },
+  {
+    "id": 29,
+    "name": "Bathroom Shelf",
+    "category": "bathroom",
+    "color": "Chrome",
+    "material": "Metal",
+    "img": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop",
+    "price": 90,
+    "description": "Chrome bathroom shelf for toiletries."
+  },
+  {
+    "id": 30,
+    "name": "Outdoor Grill",
+    "category": "outdoor",
+    "color": "Black",
+    "material": "Metal",
+    "img": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=300&fit=crop",
+    "price": 400,
+    "description": "Durable outdoor grill for barbecues."
+  }
+]
