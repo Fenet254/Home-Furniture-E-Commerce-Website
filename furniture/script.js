@@ -1,12 +1,16 @@
-const products = [
-  { name: "Modern Sofa", category: "living", img: "https://images.unsplash.com/photo-1616627452984-3f4f3d0b9e94", price: "$499" },
-  { name: "Wooden Table", category: "kitchen", img: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461", price: "$199" },
-  { name: "Bed Frame", category: "bedroom", img: "https://images.unsplash.com/photo-1601979031925-424e53b6caaa", price: "$899" },
-  { name: "Bathroom Mirror", category: "bathroom", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c", price: "$120" },
-  { name: "Dining Chair", category: "kitchen", img: "https://images.unsplash.com/photo-1616627988854-2c8f7d3e9b7d", price: "$89" },
-];
+let products = [];
+let cart = [];
 
-let cartCount = 0;
+// Load products from JSON file
+async function loadProducts() {
+  try {
+    const response = await fetch('../src/data/products.json');
+    products = await response.json();
+    displayProducts();
+  } catch (error) {
+    console.error('Error loading products:', error);
+  }
+}
 
 function displayProducts(filter = "all") {
   const grid = document.getElementById("product-grid");
@@ -20,20 +24,40 @@ function displayProducts(filter = "all") {
     const card = document.createElement("div");
     card.className = "product-card";
     card.innerHTML = `
-      <img src="${prod.img}" alt="${prod.name}" onerror="this.src='fallback.jpg'" />
+      <img src="${prod.img}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/300x220?text=No+Image'" />
       <div class="product-info">
         <h3>${prod.name}</h3>
-        <p>${prod.price}</p>
+        <p class="price">$${prod.price}</p>
+        <p class="description">${prod.description}</p>
       </div>
-      <button class="add-cart-btn" onclick="addToCart()">Add to Cart</button>
+      <button class="add-cart-btn" onclick="addToCart(${prod.id})">Add to Cart</button>
     `;
     grid.appendChild(card);
   });
 }
 
-function addToCart() {
-  cartCount++;
-  document.getElementById("cartCount").textContent = cartCount;
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if (product) {
+    const existingItem = cart.find(item => item.id === productId);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.push({ ...product, quantity: 1 });
+    }
+    updateCartCount();
+    showNotification(`${product.name} added to cart!`);
+  }
+}
+
+function updateCartCount() {
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("cartCount").textContent = totalItems;
+}
+
+function showNotification(message) {
+  // Simple notification - you can enhance this
+  alert(message);
 }
 
 function showAllProducts(btn) {
@@ -61,15 +85,64 @@ function handleSearch() {
     const card = document.createElement("div");
     card.className = "product-card";
     card.innerHTML = `
-      <img src="${prod.img}" alt="${prod.name}" />
+      <img src="${prod.img}" alt="${prod.name}" onerror="this.src='https://via.placeholder.com/300x220?text=No+Image'" />
       <div class="product-info">
         <h3>${prod.name}</h3>
-        <p>${prod.price}</p>
+        <p class="price">$${prod.price}</p>
+        <p class="description">${prod.description}</p>
       </div>
-      <button class="add-cart-btn" onclick="addToCart()">Add to Cart</button>
+      <button class="add-cart-btn" onclick="addToCart(${prod.id})">Add to Cart</button>
     `;
     grid.appendChild(card);
   });
 }
 
-displayProducts();
+// Cart Modal Functions
+function openCart() {
+  const modal = document.getElementById("cartModal");
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Your cart is empty.</p>";
+  } else {
+    cart.forEach(item => {
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "cart-item";
+      itemDiv.innerHTML = `
+        <div>
+          <h4>${item.name}</h4>
+          <p>$${item.price} x ${item.quantity}</p>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+      `;
+      cartItems.appendChild(itemDiv);
+    });
+  }
+
+  modal.style.display = "block";
+}
+
+function closeCart() {
+  document.getElementById("cartModal").style.display = "none";
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter(item => item.id !== productId);
+  updateCartCount();
+  openCart(); // Refresh the cart modal
+}
+
+// Event listeners
+document.getElementById("cartButton").addEventListener("click", openCart);
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById("cartModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Load products on page load
+loadProducts();

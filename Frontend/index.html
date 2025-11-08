@@ -29,15 +29,24 @@
 
   <main>
     <section id="product-grid" class="grid-container">
-      <!-- Products dynamically inserted by JS -->
+     
     </section>
   </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+    </div>
+  </div>
 
   <footer class="footer">
     <input id="searchInput" type="search" placeholder="Search products..." />
     <button onclick="handleSearch()">Search</button>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="../furniture/script.js"></script>
 </body>
 </html>
