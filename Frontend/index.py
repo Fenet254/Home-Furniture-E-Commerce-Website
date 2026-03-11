@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../furniture/style.css" />
 </head>
 
+
 <body>
   <header class="header">
     <div class="logo">🛋️ <span>FurniHome</span></div>
