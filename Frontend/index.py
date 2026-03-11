@@ -14,6 +14,7 @@
     <div class="logo">🛋️ <span>FurniHome</span></div>
 
 
+
     <nav class="nav">
       <button class="nav-btn active" onclick="showAllProducts(this)">All</button>
       <button class="nav-btn" onclick="showCategory('kitchen', this)">Kitchen</button>
